@@ -14,7 +14,7 @@ CRAIGSLIST_SUBDOMAIN = %w(bakersfield chico fresno goldcountry hanford humboldt 
  mendocino merced modesto monterey orangecounty palmsprings redding sacramento sandiego sfbay slo santabarbara
  santamaria siskiyou stockton susanville ventura visalia yubasutter)
 
-CRAIGSLIST_SUBDOMAIN = %w(bakersfield chico fresno goldcountry)
+#CRAIGSLIST_SUBDOMAIN = %w(bakersfield chico fresno goldcountry)
 
 out_file = File.new("#{Time.now.strftime("%Y-%m-%d")}-s2000.html", "w")
 
@@ -33,8 +33,8 @@ CRAIGSLIST_SUBDOMAIN.each do |subdomain|
         next
       end
     end
-    if p.text =~ /Few LOCAL results found. Here are some from NEARBY areas/
-      || p.text =~ /Zero LOCAL results found. Here are some from NEARBY areas/
+    if p.text =~ /Few LOCAL results found. Here are some from NEARBY areas/ ||
+        p.text =~ /Zero LOCAL results found. Here are some from NEARBY areas/
       debug_print("End of local results: break")
       break
     end
