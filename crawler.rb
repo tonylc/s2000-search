@@ -33,8 +33,8 @@ CRAIGSLIST_SUBDOMAIN.each do |subdomain|
         next
       end
     end
-    if p.text =~ /Few LOCAL results found. Here are some from NEARBY areas/ ||
-      p.text =~ /Zero LOCAL results found. Here are some from NEARBY areas/
+    if p.text =~ /Few LOCAL results found. Here are some from NEARBY areas/
+      || p.text =~ /Zero LOCAL results found. Here are some from NEARBY areas/
       debug_print("End of local results: break")
       break
     end
